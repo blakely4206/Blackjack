@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFE3BB7F-9F1E-423C-8994-0FE533F02F9C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Blackjack</RootNamespace>
+    <AssemblyName>Blackjack</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CardHandler.cs" />
+    <Compile Include="ddd3d.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ddd3d.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Game.cs" />
+    <Compile Include="GameAnimations.cs" />
+    <Compile Include="ImageHandler.cs" />
+    <Compile Include="LabelHandler.cs" />
+    <Compile Include="SoundHandler.cs" />
+    <Compile Include="start.xaml.cs">
+      <DependentUpon>start.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Card.cs" />
+    <Compile Include="Dealer.cs" />
+    <Compile Include="Deck.cs" />
+    <Compile Include="Hand.cs" />
+    <Compile Include="Human.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="start.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="ddd3d.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ddd3d.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cards\10ofClubs.bmp" />
+    <Resource Include="Cards\10OfDiamonds.bmp" />
+    <Resource Include="Cards\10OfHearts.bmp" />
+    <Resource Include="Cards\10OfSpades.bmp" />
+    <Resource Include="Cards\2ofClubs.bmp" />
+    <Resource Include="Cards\2OfDiamonds.bmp" />
+    <Resource Include="Cards\2OfHearts.bmp" />
+    <Resource Include="Cards\2OfSpades.bmp" />
+    <Resource Include="Cards\3ofClubs.bmp" />
+    <Resource Include="Cards\3OfDiamonds.bmp" />
+    <Resource Include="Cards\3OfHearts.bmp" />
+    <Resource Include="Cards\3OfSpades.bmp" />
+    <Resource Include="Cards\4ofClubs.bmp" />
+    <Resource Include="Cards\4OfDiamonds.bmp" />
+    <Resource Include="Cards\4OfHearts.bmp" />
+    <Resource Include="Cards\4OfSpades.bmp" />
+    <Resource Include="Cards\5ofClubs.bmp" />
+    <Resource Include="Cards\5OfDiamonds.bmp" />
+    <Resource Include="Cards\5OfHearts.bmp" />
+    <Resource Include="Cards\5OfSpades.bmp" />
+    <Resource Include="Cards\6ofClubs.bmp" />
+    <Resource Include="Cards\6OfDiamonds.bmp" />
+    <Resource Include="Cards\6OfHearts.bmp" />
+    <Resource Include="Cards\6OfSpades.bmp" />
+    <Resource Include="Cards\7ofClubs.bmp" />
+    <Resource Include="Cards\7OfDiamonds.bmp" />
+    <Resource Include="Cards\7OfHearts.bmp" />
+    <Resource Include="Cards\7OfSpades.bmp" />
+    <Resource Include="Cards\8ofClubs.bmp" />
+    <Resource Include="Cards\8OfDiamonds.bmp" />
+    <Resource Include="Cards\8OfHearts.bmp" />
+    <Resource Include="Cards\8OfSpades.bmp" />
+    <Resource Include="Cards\9ofClubs.bmp" />
+    <Resource Include="Cards\9OfDiamonds.bmp" />
+    <Resource Include="Cards\9OfHearts.bmp" />
+    <Resource Include="Cards\9OfSpades.bmp" />
+    <Resource Include="Cards\AceofClubs.bmp" />
+    <Resource Include="Cards\AceOfDiamonds.bmp" />
+    <Resource Include="Cards\AceOfHearts.bmp" />
+    <Resource Include="Cards\AceOfSpades.bmp" />
+    <Resource Include="Cards\back.jpg" />
+    <Resource Include="Cards\hoyleback.jpg" />
+    <Resource Include="Cards\img-thing.jpg" />
+    <Resource Include="Cards\JackofClubs.bmp" />
+    <Resource Include="Cards\JackOfDiamonds.bmp" />
+    <Resource Include="Cards\JackOfHearts.bmp" />
+    <Resource Include="Cards\JackOfSpades.bmp" />
+    <Resource Include="Cards\KingofClubs.bmp" />
+    <Resource Include="Cards\KingOfDiamonds.bmp" />
+    <Resource Include="Cards\KingOfHearts.bmp" />
+    <Resource Include="Cards\KingOfSpades.bmp" />
+    <Resource Include="Cards\king_of_spades2.png" />
+    <Resource Include="Cards\QueenofClubs.bmp" />
+    <Resource Include="Cards\QueenOfDiamonds.bmp" />
+    <Resource Include="Cards\QueenOfHearts.bmp" />
+    <Resource Include="Cards\QueenOfSpades.bmp" />
+    <Resource Include="Resources\felt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardShuffle.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\intro.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\bust.wav" />
+    <Resource Include="Resources\Chip.png" />
+    <Resource Include="Resources\unknownPlayer.jpg" />
+    <Resource Include="Resources\speakerOn.bmp" />
+    <Resource Include="Resources\speakerOff.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
